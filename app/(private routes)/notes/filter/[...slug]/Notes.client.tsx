@@ -5,7 +5,7 @@ import NoteList from '@/components/NoteList/NoteList';
 import Pagination from '@/components/Pagination/Pagination';
 import css from './page.module.css';
 import { Toaster } from 'react-hot-toast';
-import { fetchNote } from '@/lib/api';
+import { fetchNote } from '@/lib/api/clientApi';
 import { keepPreviousData, useQuery } from '@tanstack/react-query';
 import SearchBox from '@/components/SearchBox/SearchBox';
 import { useDebouncedCallback } from 'use-debounce';
