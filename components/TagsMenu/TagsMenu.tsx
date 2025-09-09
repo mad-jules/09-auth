@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import css from './TagsMenu.module.css';
 import Link from 'next/link';
-import { tagList } from '@/app/notes/filter/@sidebar/default';
+import { tagList } from '@/app/(private routes)/notes/filter/@sidebar/default';
 
 export default function TagsMenu() {
   const [isOpen, setIsOpen] = useState(false);
