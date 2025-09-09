@@ -7,7 +7,6 @@ import { ChangeEvent, FormEvent, useState } from 'react';
 import { editMe } from '@/lib/api/clientApi';
 import { useAuthStore } from '@/lib/store/authStore';
 import toast from 'react-hot-toast';
-import { isAxiosError } from 'axios';
 import { useRouter } from 'next/navigation';
 
 interface EditProfileFormProps {
@@ -36,10 +35,10 @@ export default function EditProfileForm({ user }: EditProfileFormProps) {
         toast.error("username can't be empty");
         return;
       }
-      const res = await editMe({ username: formValues.username });
-      if (res) {
-        setUser(res.data);
-        toast.success(`${res.data.username} changed succesfully`);
+      const updatedUser = await editMe({ username: formValues.username });
+      if (updatedUser) {
+        setUser(updatedUser);
+        toast.success(`${updatedUser.username} changed succesfully`);
         router.replace('/profile');
       }
     } catch (error) {

@@ -38,7 +38,7 @@ export default async function Profile() {
         </div>
         {user && (
           <div className={css.profileInfo}>
-            <p>Username: {user.email}</p>
+            <p>Username: {user.username}</p>
             <p>Email: {user.email}</p>
           </div>
         )}

@@ -1,9 +1,7 @@
-import Image from 'next/image';
 import css from './EditProfilePage.module.css';
-import { useAuthStore } from '@/lib/store/authStore';
 import { getServerMe } from '@/lib/api/serverApi';
 import { Metadata } from 'next';
-import EditProfileForm from './EditProfilePage.client';
+import EditProfileForm from './EditProfileForm.client';
 
 export async function generateMetadata(): Promise<Metadata> {
   const user = await getServerMe();

@@ -1,7 +1,21 @@
-export default function AuthLayout({
-  children,
-}: Readonly<{
+'use client';
+
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/navigation';
+
+type Props = {
   children: React.ReactNode;
-}>) {
-  return children;
+};
+
+export default function AuthLayout({ children }: Props) {
+  const [loading, setLoading] = useState(true);
+
+  const router = useRouter();
+
+  useEffect(() => {
+    router.refresh();
+    setLoading(false);
+  }, [router]);
+
+  return <>{loading ? <div>Loading...</div> : children}</>;
 }

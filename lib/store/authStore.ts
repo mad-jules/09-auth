@@ -8,7 +8,7 @@ interface UserStore {
   clearIsAuthenticated: () => void;
 }
 
-export const useAuthStore = create<UserStore>((set) => ({
+export const useAuthStore = create<UserStore>()((set) => ({
   user: null,
   isAuthenticated: false,
   setUser(user) {
